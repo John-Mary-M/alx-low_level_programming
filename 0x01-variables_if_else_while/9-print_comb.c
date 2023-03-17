@@ -7,23 +7,16 @@
  */
 int main(void)
 {
-	int b = 0;
+	int n;
 
-	while (b < 10)
+	for (n = 0; n < 10; n++)
 	{
-		int m = b + 1;
-
-		while (m < 10)
+		putchar(n + '0');
+		if (n != 9)
 		{
-			putchar(b++ + '0');
-			putchar(m++ + '0');
-			if (b < 9 || m < 10)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			putchar(',');
+			putchar(' ');
 		}
-		m = b;
 	}
 	putchar('\n');
 
