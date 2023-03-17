@@ -6,26 +6,16 @@
  */
 int main(void)
 {
-	char lowercase = 'a';
-	char lowercase_plus = 'r';
-	char lwer_case = 'f';
+	char letter = 'a';
 
-	while (lowercase <= 'd')
+	while (letter <= 'z')
 	{
-		putchar(lowercase);
-		lowercase++;
-	}
+		if (letter != 'e' && letter != 'q')
+		{
+			putchar(letter);
+		}
 
-	while (lwer_case <= 'p')
-	{
-		putchar(lwer_case);
-		lwer_case++;
-	}
-
-	while (lowercase_plus <= 'z')
-	{
-		putchar(lowercase_plus);
-		lowercase_plus++;
+		letter++;
 	}
 
 	putchar('\n');
