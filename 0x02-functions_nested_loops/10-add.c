@@ -2,7 +2,9 @@
 
 /**
  *add - adds two integers
- *@int: is the int type of the integer
+ *@x: is the int type of the integer
+ *@y: is the secound integer
+ *
  * Return: Always 0.
  */
 int add(int x, int y)
