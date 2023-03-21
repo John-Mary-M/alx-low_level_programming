@@ -1,22 +1,18 @@
-#include <stdio.h>
-#include "_putchar.c"
+#include "main.h"
 
 /**
- * main - Entry point.
- *
- * _putchar - writes alphabet in lowercase to stdout
+ * print_alphabet - Generates alphabet in lowercase to stdout.
  *
  * Return: On success 0.
  * On error, -1 is returned.
  */
-int main(void)
+void print_alphabet(void)
 {
-	int *i;
+	int i;
 
-	for (i == 'a'; i <= 'z'; i++)
+	for (i = 97; i <= 122; i++)
 	{
-		_putchar(char *);
+		_putchar(i);
 	}
-	_putchar("\n");
-	return (0);
+	_putchar('\n');
 }
