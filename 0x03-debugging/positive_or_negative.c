@@ -6,7 +6,7 @@
 /* betty style doc for function main goes there */
 /**
  * positive_or_negative - Checks for positive or negative.
- *@i: Number to check.
+ *@n: Number to check.
  *
  *Return: Always 0 (Success)
  */
@@ -28,5 +28,5 @@ void positive_or_negative(int n)
 	{
 		printf("%d is negative\n", n);
 	}
-	return;
+
 }
