@@ -12,5 +12,4 @@ void reset_to_98(int *n)
 
 	f = n;
 	*f = 98; /* updating value */
-	return;
 }
