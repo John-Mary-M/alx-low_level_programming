@@ -11,13 +11,19 @@ void print_rev(char *s)
 	int len = 0;
 	int i;
 
-	/* calculating the length of s*/
-	while (*s != '\0')
+	while (len >= 0)
 	{
+		if (s[len] == '\0')
+		{
+			break;
+		}
 		len++;
-		s++;
 	}
-	/* using the length of s to move backwards through the string*/
+	/*while (s[len] =! '\0')
+	 *{
+	 *	len++;
+	 *}
+	 */
 	for (i = len - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
