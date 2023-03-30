@@ -9,7 +9,8 @@
 char *leet(char *str)
 {
 	char *result = str;
-	char *leet_chars = "aAeEoOtTlL";
+	char *leet_chars = "AEOTL";
+	char *leet_small = "aeotl";
 	char *leet_nums = "44330771";
 	int i;
 	int j;
@@ -18,7 +19,7 @@ char *leet(char *str)
 	{
 		for (j = 0; leet_chars[j]; j++)
 		{
-			if (str[i] == leet_chars[j])
+			if (str[i] == leet_chars[j] || str[i] == leet_small[j])
 			{
 				result[i] = leet_nums[j];
 				break;
