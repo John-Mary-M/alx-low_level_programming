@@ -8,23 +8,23 @@
  */
 char *leet(char *str)
 {
-	char *result = str;
-	char *leet_chars = "AEOTL";
-	char *leet_small = "aeotl";
-	char *leet_nums = "44330771";
-	int i;
-	int j;
+	int count = 0,i;
+	int low_case[] = {97, 101, 111, 116, 108};
+	int uppercase[] = {65, 69, 79, 84, 76};
+	int numbers[] = {52, 51, 48, 55, 49};
 
-	for (i = 0; str[i]; i++)
+	while (*(str + count) != '\0')
 	{
-		for (j = 0; leet_chars[j]; j++)
+		for (i = 0; i < 5; i++)
 		{
-			if (str[i] == leet_chars[j] || str[i] == leet_small[j])
+			if (*(str + count) == low_case[i] ||
+			    *(str + count) == uppercase[i])
 			{
-				result[i] = leet_nums[j];
-				break;
+			*(str + count) = numbers[i];
+			break;
 			}
 		}
+		count++;
 	}
-	return (result);
+	return (str);
 }
