@@ -4,45 +4,29 @@
  * cap_string - Converst a string to title case
  *
  * @str: Pointer to the string to modify
- * @separators: the delimeter to look for and determine word to capitalise
  *
  * Return: Pointer to the modified string.
  */
 char *cap_string(char *str)
 {
-	int i;
-	char separators[] = " \t\n,;.!?\"(){}";
+	int i = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (str[i])
 	{
-		if (i == 0 || is_separators(str[i - 1], separators))
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-			{
-				str[i] = str[i] - ('a' - 'A');
-			}
+			i++;
 		}
+		if ((str[i - 1] == ' ' || str[i - 1] == '\t' ||
+		    str[i - 1] == '\n' || str[i - 1] == ',' ||
+		    str[i - 1] == '!' || str[i - 1] == '.' ||
+		    str[i - 1] == '"' || str[i - 1] == '?' ||
+		    str[i - 1] == ';' || str[i - 1] == '(' || str[i - 1] == ')'
+		    || str[i - 1] == '{' || str[i - 1] == '}' || i == 0))
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
 	}
 	return (str);
-}
-
-/**
- * is_separator - Checks if a character is a separator.
- * @c: The input character.
- * @separators: The separator characters.
- *
- * Return: 1 if the character is a separator, 0 otherwise.
- */
-int is_separator(char c, char *separators)
-{
-	int i;
-
-	for (i = 0; separators[i] != '\0'; i++)
-	{
-		if (c == separators[i])
-		{
-			return (1);
-		}
-	}
-	return (0);
 }
