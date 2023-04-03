@@ -10,20 +10,22 @@
 char *_strchr(char *s, char c)
 {
 	char *end = s;
+	int i;
 
-	while (*end != '\0')
-	{
-		end++;
-	}
+	/*
+	 *while (*end != '\0')
+	 *{
+	 *	end++;
+	 *}
+	 */
 	/*search for c in s, search till '\0' */
-	while (s < end)
-	{
-		if (*s == c)
+	for (i = 0; end[i] != '\0'; i++)
+		if (end[i] == c)
 		{
-			return (s);
+			return (end + i);
 		}
-		s++;
-	}
 	/* return pointer to null s element if c not found*/
-	return (s);
+	if (end[i] == c)
+		return (end + 1);
+	return (0);
 }
