@@ -9,8 +9,14 @@
  */
 char *_strchr(char *s, char c)
 {
+	char *end = s;
+
+	while (*end != '\0')
+	{
+		end++;
+	}
 	/*search for c in s, search till '\0' */
-	while (*s != '\0')
+	while (s < end)
 	{
 		if (*s == c)
 		{
