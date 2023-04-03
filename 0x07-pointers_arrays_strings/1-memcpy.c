@@ -13,11 +13,12 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 	int dest_len = 0;
 	int i;
 
-	/* determine the length of dest to avoid overlap */
-	while (dest[dest_len] != src)
-	{
-		dest_len++;
-	}
+	/*
+	 *while (dest[dest_len] != src)
+	 *{
+	 *	dest_len++;
+	 *}
+	*/
 	/* copy specified number of bytes from src */
 	for (i = 0; i < n; i++)
 	{
