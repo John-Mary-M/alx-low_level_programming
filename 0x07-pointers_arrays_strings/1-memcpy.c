@@ -8,10 +8,10 @@
  *
  * Return: dest.
  */
-char *_memcpy(char *dest, char *src, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int dest_len = 0;
-	int i;
+	/*int dest_len = 0;*/
+	unsigned int i;
 
 	/*
 	 *while (dest[dest_len] != src)
