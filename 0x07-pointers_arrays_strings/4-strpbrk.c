@@ -11,14 +11,14 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i;
-	int x;
+	int i = 0;
+	int x = 0;
 
 	/*search through s */
-	for (i = 0; s[i] != '\0'; i++)
+	for (; s[i] != '\0'; i++)
 	{
 		/* search through accept*/
-		for (x = 0; accept[x] != '\0'; x++)
+		for (; accept[x] != '\0'; x++)
 		{
 			/* compare s and accept */
 			if (s[i] == accept[x])
