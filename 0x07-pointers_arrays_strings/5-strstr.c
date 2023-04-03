@@ -14,18 +14,27 @@ char *_strstr(char *haystack, char *needle)
 	int y;
 
 	/* search through haystack*/
+	if (needle[0] == '\0')
+		return (haystack);
+
 	for (f = 0; haystack[f] != '\0'; f++)
 	/* compare needle to haystack*/
 	{
-		for (y = 0; needle[y] != '\0'; y++)
+		if (haystack[f] == needle[0])
 		{
-			if (haystack[f] == needle[y])
+			for (y = 0; needle[y] != '\0'; y++)
 			{
-				/*
-				 *return pointer to start of needle in hay stack
-				 */
-				return (needle);
+				if (haystack[f + y] != needle[y])
+				{
+					/*
+					 *return pointer to start of needle in
+					 * hay stack
+					 */
+					break;
+				}
 			}
+			if (needle[y] == '\0')
+				return (haystack + y + 1);
 		}
 	}
 	return (0);
