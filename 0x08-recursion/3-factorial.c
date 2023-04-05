@@ -9,8 +9,10 @@
 int factorial(int n)
 {
 	/* base case */
-	if (n <= 1)
+	if (n == 0)
 		return (1);
+	if (n < 0)
+		return (-1);
 	/*recursive case calling the function again*/
 	return (n * factorial(n - 1));  /* based on the formula of factorial*/
 }
