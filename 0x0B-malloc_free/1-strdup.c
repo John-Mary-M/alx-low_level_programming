@@ -12,8 +12,8 @@
 char *_strdup(char *str)
 {
 	char *ret_ptr;
-        int i = 0;
-        int k;
+	int i = 0;
+	int k;
 
 /*check if str has contents in it*/
 	if (str == NULL)
