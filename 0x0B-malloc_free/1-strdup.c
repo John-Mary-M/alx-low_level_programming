@@ -12,8 +12,8 @@
 char *_strdup(char *str)
 {
 	char *ret_ptr;
-	unsigned int i;
-	unsigned int k;
+        int i = 0;
+        int k;
 
 /*check if str has contents in it*/
 	if (str == NULL)
@@ -28,7 +28,7 @@ char *_strdup(char *str)
 	}
 
 	/* Obtain memory for new copy of str*/
-	ret_ptr = (char *)malloc(i + 1);
+	ret_ptr = malloc(sizeof(char) * i + 1);
 
 	/*check if ret_ptr space is available*/
 	if (ret_ptr == NULL)
@@ -37,7 +37,7 @@ char *_strdup(char *str)
 	}
 
 	/* copy str to ret_ptr*/
-	for (k = 0; k <= i; k++)
+	for (k = 0; k < i; k++)
 	{
 		ret_ptr[k] = str[k];
 	}
