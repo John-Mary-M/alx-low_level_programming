@@ -11,51 +11,40 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int ln_1, ln_2, i, d;
+	unsigned int ln_1, ln_2, i;
 	char *ret_conc;
 
 	i = 0;
 	ln_1 = 0;
 	ln_2 = 0;
-	/* check if s1 and s2 have contents*/
 	if (s1  == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
 	/* determine length of s1*/
-	if (s1 != NULL)
+	while (s1[i] != '\0')
 	{
-		while (s1[i] != '\0')
-		{
-			i++;
-			ln_1++;
-		}
+		i++;
+		ln_1++;
 	}
 	/*determine length of s2*/
-	if (s2 != NULL)
+	while (s2[i] != '\0')
 	{
-		while (s2[i] != '\0')
-		{
-			i++;
-			ln_2++;
-		}
+		i++;
+		ln_2++;
 	}
-	/* allocate space for ret_conc*/
-	ret_conc = (char *)malloc(ln_1 + ln_2 + 1);
+	ret_conc = malloc(sizeof(char) * (ln_1 + ln_2 + 1));
 	/* check if anything has been stored in the reserved memory*/
 	if (ret_conc == NULL)
 		return (NULL);
-	/*put contents of s1 in reserved memory*/
-	if (s1 != NULL)
-	{
-		for (i = 0; i < ln_1; i++)
-			ret_conc[i] = s1[i];
-	}
-	/*put contents of s2 in reserved memory also*/
+
+	for (i = 0; i < ln_1; i++)
+		ret_conc[i] = s1[i];
+
 	if (s2 != NULL)
 	{
-		for (d = 0; d < ln_2; d++)
-			ret_conc[i + d] = s2[d];
+		for (i = 0; i < ln_2; i++)
+			ret_conc[i + ln_1] = s2[i];
 	}
 	/*add the null byte to end of memory*/
 	ret_conc[i + ln_1] = '\0';
