@@ -25,6 +25,9 @@ char *create_array(unsigned int size, char c)
 
 	/* check if has something in it*/
 	if (ret_ptr == NULL)
+	{
+		return (NULL);
+	}
 	/*initializing the array*/
 	for (i = 0; i < size; i++)
 	{
@@ -32,4 +35,5 @@ char *create_array(unsigned int size, char c)
 	}
 
 	return (ret_ptr);
+
 }
