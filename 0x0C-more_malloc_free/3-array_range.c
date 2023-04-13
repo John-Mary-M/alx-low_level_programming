@@ -14,16 +14,22 @@ int *array_range(int min, int max)
 {
 	int *ret_ptr;
 	int i;
+	int len;
 
 	/* chech if min > max */
 	if (min > max)
 		return (NULL);
+	/*determine the deference between min and max*/
+	len = 0;
+	for (i = min; i <= max; i++)
+		len++;
 
-	ret_ptr = malloc(sizeof(int) * (max - min) + 1);
+	ret_ptr = malloc(sizeof(int) * len);
 	if (ret_ptr == NULL)
 		return (NULL);
 
 	/* initialize array in memory in order from min to max*/
+	i = 0;
 	while (min <= max)
 	{
 		ret_ptr[i] = min;
