@@ -12,7 +12,7 @@ void *malloc_checked(unsigned int b)
 {
 	void *ret_ptr;
 
-	ret_ptr = malloc(sizeof(char) * b);
+	ret_ptr = malloc(b);
 	if (!ret_ptr)
 	{
 		exit(0);
