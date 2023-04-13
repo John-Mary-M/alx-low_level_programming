@@ -13,7 +13,7 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, ln_1, ln_2;
+	unsigned int i, ln_1, ln_2, sum_str;
 	char *d;
 
 	if (s2 == NULL)
@@ -28,10 +28,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[ln_1] != '\0')
 		ln_1++;
 
-	if (n > ln_2)
+	if (n >= ln_2)
+	{
 		n = ln_2;
+		sum_str = ln_1 + ln_2;
+	}
+	else
+		sum_str = ln_1 + n;
 
-	d = malloc(sizeof(char) * (ln_1 + ln_2 + 1));
+	d = malloc(sizeof(char) * sum_str + 1);
 	if (d == NULL)
 		return (NULL);
 
