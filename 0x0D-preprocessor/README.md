@@ -16,3 +16,6 @@ value of a number x.
 
 4-sum.h:  function-like macro SUM(x, y) that computes the sum of the numbers x
 and y.
+
+Author
+(Mukisa John Mary) [https://github.com/John-Mary-M]
