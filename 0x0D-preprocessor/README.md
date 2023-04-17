@@ -18,4 +18,4 @@ value of a number x.
 and y.
 
 Author
-(Mukisa John Mary) [https://github.com/John-Mary-M]
+[Mukisa John Mary](https://github.com/John-Mary-M)
