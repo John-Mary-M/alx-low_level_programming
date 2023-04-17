@@ -8,8 +8,11 @@
  */
 void free_dog(dog_t *d)
 {
-	/*using free() to free previously assigned space*/
-	free(d->name);
-	free(d->owner);
-	free(d);
+	if (d != NULL)/*making sure d isnt already empty*/
+	{
+		/*using free() to free previously assigned space*/
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 }
