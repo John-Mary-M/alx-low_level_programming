@@ -10,13 +10,13 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name == NULL || f == NULL)
-		exit(EXIT_FAILURE);
+	if (name != NULL || f != NULL)
+		f(name);
 	/*while (*name == '\0')iterate over each character in name*/
-	f(name);/**
-		 *call print_name by use of function pointer f with
-		 * each character as an argument
-		 */
+	/**
+	 *call print_name by use of function pointer f with
+	 * each character as an argument
+	 */
 
 	/*f('\n'); call print_name with newline character as an argument*/
 }
