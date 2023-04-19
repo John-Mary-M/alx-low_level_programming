@@ -19,7 +19,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 		return;
 	if (array == NULL)
 		return;
-	
+
 	/* action called with the 0th element of the arry*/
 	action(*array);
 	/*recursive call to array_itarator*/
