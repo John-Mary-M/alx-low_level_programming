@@ -13,6 +13,10 @@
  */
 int int_index_helper(int *array, int size, int (*cmp)(int), int index)
 {
+	if (cmp == NULL)
+		return (-1);
+	if (array == NULL)
+		return (-1);
 	if (index >= size)
 		return (-1);
 
