@@ -10,11 +10,16 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-        if (size == 0)/*Recursion base case*/
+	if (size == 0)/*Recursion base case*/
 	{
 		return;
 	}
-
+	/*make sure action and array are not NULL*/
+	if (action == NULL)
+		return;
+	if (array == NULL)
+		return;
+	
 	/* action called with the 0th element of the arry*/
 	action(*array);
 	/*recursive call to array_itarator*/
