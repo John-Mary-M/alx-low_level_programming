@@ -70,10 +70,11 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 
+
 	va_start(args, format);
 	i = 0;
 
-	while (format != NULL && format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (ops[j].f != NULL)
