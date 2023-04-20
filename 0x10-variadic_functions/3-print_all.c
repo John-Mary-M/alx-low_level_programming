@@ -54,6 +54,7 @@ int print_s(va_list a)
 /**
  * print_all - prints anything
  * @format:  list of types of arguments passed to the function
+ * @...: the arguments to print
  * Return: void
  */
 void print_all(const char * const format, ...)
@@ -74,7 +75,7 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	i = 0;
 
-	while (format && format[i])
+	while (format != NULL && format[i])
 	{
 		j = 0;
 		while (ops[j].f != NULL)
