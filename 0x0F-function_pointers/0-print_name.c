@@ -10,8 +10,24 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+	int name_len = 0;
 
-	if (name != NULL && f != NULL)
-		f(name);
+	if (name == NULL)
+		return;
+
+	while (name[name_len] != '\0')
+		name_len++;
+
+	if (name_len == 0)
+		return;
+
+	if (f == &print_name)
+		return;
+
+	f(name);
+	/**
+	 * if (name != NULL && f != NULL)
+	 * f(name);
+	 */
 
 }
