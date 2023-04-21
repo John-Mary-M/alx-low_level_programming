@@ -84,11 +84,12 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", sep);
 				ops[j].f(args);
+				sep = sep2;
 				break;
 			}
 			j++;
 		}
-		sep = sep2;
+		/*sep = sep2;*/
 		i++;
 	}
 	printf("\n");
