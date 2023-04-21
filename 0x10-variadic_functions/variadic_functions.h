@@ -19,7 +19,7 @@ int print_s(va_list a);
 typedef struct op
 {
 	char *c;
-	int(*f)(va_list);
+	int(*f)(va_list args);
 } printer;
 
 #endif /* _variadic_functions_ */

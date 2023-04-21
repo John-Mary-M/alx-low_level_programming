@@ -72,7 +72,7 @@ void print_all(const char * const format, ...)
 	};
 
 
-	va_start(a, format);
+	va_start(args, format);
 	i = 0;
 
 	while (format && format[i])
@@ -80,10 +80,10 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (j < 4)
 		{
-			if (*printer[j].c == format[i])
+			if (*ops[j].c == format[i])
 			{
 				printf("%s", sep);
-				ops[j].f(a);
+				ops[j].f(args);
 			}
 			j++;
 		}
@@ -91,5 +91,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(a);
+	va_end(args);
 }
