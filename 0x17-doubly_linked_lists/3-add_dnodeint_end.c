@@ -2,7 +2,7 @@
 
 /**
  * add_dnodeint_end - adds node to end of dlistint
- * @h: double pointer to the head of the list
+ * @head: double pointer to the head of the list
  * @n: data feild to be put in the new node
  * Return: address of new element, NULL if it fails
  */
