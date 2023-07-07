@@ -9,27 +9,24 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *hash_table = NULL;
-	unsigned long int i;
+	hash_table_t *newTable;
+	unsigned int i;
 
-    /* Allocate memory for the hash table */
-	hash_table = malloc(sizeof(hash_table_t));
-	if (hash_table == NULL)
-		return (NULL);
-
-    /* Allocate memory for the array of pointers to nodes */
-	hash_table->array = malloc(sizeof(hash_node_t *) * size);
-	if (hash_table->array == NULL)
+	if (size > 0)
 	{
-		free(hash_table);
-		return (NULL);
+		newTable = malloc(sizeof(hash_table_t));
+		if (!newTable)
+			return (NULL);
+		newTable->size = size;
+		newTable->array = malloc(sizeof(hash_node_t *) * size);
+		if (!newTable->array)
+		{
+			free(newTable);
+			return (NULL);
+		}
+		for (i = 0; i < size; i++)
+			newTable->array[i] = NULL;
+		return (newTable);
 	}
-
-    /* Initialize each element of the array to NULL */
-	for (i = 0; i < size; i++)
-		hash_table->array[i] = NULL;
-
-	hash_table->size = size;
-
-	return (hash_table);
+	return (NULL);
 }
