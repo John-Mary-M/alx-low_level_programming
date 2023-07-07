@@ -8,30 +8,29 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
+	unsigned long int position;
 	hash_node_t *checker, *new;
 
 	if (!ht || !ht->size || !strlen(key))
 		return (0);
-	index = key_index((const unisigned char *)key, ht->size);
-	checker = ht->array[index];
+	position = key_index((const unsigned char *)key, ht->size);
+	checker = ht->array[position];
 	while (checker)
 	{
 		if (!strcmp(checker->key, key))
 		{
-			free(checcker->value);
-			checker->value = strup((char *)value);
+			free(checker->value);
+			checker->value = strdup((char *)value);
 			if (!checker->value)
 				return (0);
 			return (1);
 		}
-		checker = cheker->next;
+		checker = checker->next;
 	}
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-
-	new->key = str((char *)key);
+	new->key = strdup((char *)key);
 	if (!new->key)
 	{
 		free(new);
@@ -44,7 +43,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(new);
 		return (0);
 	}
-	new->next = ht->array[index];
-	ht->array[index] = new;
+	new->next = ht->array[position];
+	ht->array[position] = new;
 	return (1);
 }
